@@ -30,8 +30,12 @@ public class Shape {
         var pyramid = new StringBuilder();
         var character = "*";
         var space = " ";
+        var numberOfSpaces = size - 1;
+        var numberOfCharacters = 1;
         for (int row = 1; row <= size; ++row) {
-            pyramid.append(space.repeat(size - row)).append(character.repeat(1 + (2 * (row - 1)))).append(System.lineSeparator());
+            pyramid.append(space.repeat(numberOfSpaces)).append(character.repeat(numberOfCharacters)).append(System.lineSeparator());
+            --numberOfSpaces;
+            numberOfCharacters = numberOfCharacters + 2;
         }
         return pyramid.toString();
     }

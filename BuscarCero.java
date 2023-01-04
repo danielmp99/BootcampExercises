@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class BuscarCero {
     public static void main(String[] args) {
-        int[][] matriz = new int[][] {{0, 2}, {3, 4}, {5, 1}};
-        transform(matriz);
+        int[][] numberMatriz = new int[][] {{0, 2}, {3, 4}, {5, 1}};
+        transform(numberMatriz);
     }
 
     private static void print(int[][] board) {

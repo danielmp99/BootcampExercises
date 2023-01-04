@@ -18,53 +18,27 @@ public class BuscarCero {
     }
 
     public static void transform(int[][] matrizInicial) {
-        //ArrayList<Integer> posicionesx = new ArrayList<Integer>();
-        //ArrayList<Integer> posicionesy = new ArrayList<Integer>();
-        int[][] arrayCreated = matrizInicial;
-        System.out.println(arrayCreated);
-        System.out.println(matrizInicial);
-        print(matrizInicial);
-
+        int[][] arrayCreated = matrizInicial.clone();
         for (int i = 0; i < matrizInicial.length; i++) {
             for (int j = 0; j < matrizInicial[i].length; j++) {
                 if (matrizInicial[i][j] == 0) {
-
                     addZerosHorizontally(arrayCreated, i);
                     addZerosVertically(arrayCreated, j);
                 }
                 print(matrizInicial);
             }
         }
-
-
-        //System.out.println(posicionesx.toArray().length);
-
-
-        //addZerosHorizontally(matriz, posicionesy.get(j));
-        //addZerosVertically(matriz, posicionesx.get(j));
-
     }
-
-    public static void addZerosVertically(int[][] matriz1, int y){
-        for (int k = 0; k < matriz1.length; k++) {
-            matriz1[k][y] = 0;//posicionesx.get()
+    public static void addZerosVertically(int[][] matriz, int y){
+        for (int k = 0; k < matriz.length; k++) {
+            matriz[k][y] = 0;
         }
     }
 
-    public static void addZerosHorizontally(int[][] matriz2, int x){
-        for (int l = 0; l < matriz2[0].length; l++) {
-            matriz2[x][l] = 0;//posicionesx.get()
+    public static void addZerosHorizontally(int[][] matriz, int x){
+        for (int l = 0; l < matriz[0].length; l++) {
+            matriz[x][l] = 0;
         }
-    }
-
-    public static String square(int size) {
-        var character = "*";
-        var square = new StringBuilder();
-        for (int row = 1; row <= size; ++row) {
-            square.append(character.repeat(size)).append(System.lineSeparator());//String.format("%n")
-        }
-        System.out.println(square);
-        return square.toString();
     }
 
 }

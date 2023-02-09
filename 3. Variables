@@ -1,0 +1,25 @@
+//1. Make a function when the two smaller data are summed and return if this sum is greater than the biggest data
+//2. Create afunction that calculates the distance between two points on the cartesian plane
+
+public class Variables {
+
+    public static void main(String[] args) {
+        System.out.println(isTriangle(17.0, 10.0, 7.0));
+
+    }
+
+    private static boolean isTriangle(double a, double b, double c){
+        double totalSum = a + b + c;
+        double max = Math.max(a,Math.max(b,c));
+        double sumLittleSides = totalSum - max;
+        return sumLittleSides < max;
+    }
+    
+    private static double distance(double x1,double y1, double x2, double y2){
+        var squareOfX = Math.pow(x2-x1,2);
+        var squareOfY = Math.pow(y2-y1,2);
+        var distance = Math.sqrt(squareOfX + squareOfY);
+        return distance;
+    }
+}
+

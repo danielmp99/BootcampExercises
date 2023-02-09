@@ -2,6 +2,8 @@
 //2. Write a function isOdd() that checks if a number is odd. A number is odd if it’s not even.
 //3. Write a function, differenceOfSquare() that takes two integers and returns the result of a2 - b2.
 //4. Write a function, thirdAngle() that takes two doubles that represents the measure of two angles of a triangle and returns the measure of the third. The 3 angles of a triangle sum 180, so if you subtract the sum of two angles to 180 you should get the third angle.
+//5. Write a function to calculate a * (sin B) / (sin A)
+
 import java.lang.Math;
 public class Operators {
     public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class Operators {
         System.out.println(isOdd(22));
         System.out.println(differenceOfSquare(2,2));
         System.out.println(thirdAngle(30, 40));
+        System.out.println(lawOfSines(5.0, 60.0, 60.0));
         
     }
 
@@ -28,5 +31,9 @@ public class Operators {
     
     static double thirdAngle(double firstAngle, double secondAngle){
         return 180 - (firstAngle + secondAngle);
+    }
+    
+    static double lawOfSines(double length_a, double angle1, double angle2){
+        return (length_a * (Math.sin(angle1))) / Math.sin(angle2);
     }
 }

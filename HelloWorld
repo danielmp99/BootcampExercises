@@ -1,0 +1,21 @@
+//correct the error and explain
+
+/*1.
+errorCode1() {
+  return "Where's my error?";
+}
+
+The error is that I do not establish what type of data should be returned
+*/ 
+
+String errorCode1() {
+  return "Where's my error?";
+}
+
+/*2
+String anotherError(who) {
+  return String.format("%s what's the error?", who);
+} 
+
+The error is not having put the type of data of the parameter
+*/

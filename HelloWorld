@@ -19,3 +19,55 @@ String anotherError(who) {
 
 The error is not having put the type of data of the parameter
 */
+
+String anotherError(String who) {
+  return String.format("%s what's the error?", who);
+} 
+
+/*3
+String commonError() {
+  return "This is a subtle error"
+}
+
+We need to put ;
+*/
+
+String commonError() {
+  return "This is a subtle error";
+}
+
+/*4
+String somethingMissing() {
+  "This is a little less subtle";
+} 
+
+we need to put the word return before "This is a little less subtle"
+*/
+
+String somethingMissing() {
+  return "This is a little less subtle";
+} 
+
+/*5
+String my greeting() {
+  return "Hello Error!";
+} 
+
+we need to delete the space in the name of the function
+*/
+
+String mygreeting() {
+  return "Hello Error!";
+}
+
+/*6
+String trickyError(String who) {
+  return format("A little tricky isn't %s?", who);
+} 
+
+We need to call the String function before use the format method.
+*/
+
+String trickyError(String who) {
+  return String.format("A little tricky isn't %s?", who);
+} 

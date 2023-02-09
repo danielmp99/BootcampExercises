@@ -34,6 +34,6 @@ public class Operators {
     }
     
     static double lawOfSines(double length_a, double angle1, double angle2){
-        return (length_a * (Math.sin(angle1))) / Math.sin(angle2);
+        return (length_a * (Math.sin(angle2))) / Math.sin(angle1);
     }
 }

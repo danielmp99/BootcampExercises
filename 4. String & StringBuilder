@@ -1,1 +1,33 @@
+public class Strings {
+    public static void main(String[] args) {
+        System.out.println(ellipsify("Java is fun jajaaj", 5));
+        System.out.println(hexString(0, 0, 0));
+        System.out.println(domain("https://www.java.com/en"));
 
+    }
+    public static String ellipsify(String builder, int sizeLength){
+        var primerEspacio = builder.indexOf(" ",sizeLength);
+        var finalBuilder = (primerEspacio > 0) ? builder.substring(0,sizeLength): builder;
+        finalBuilder = (finalBuilder == builder) ? builder : String.format("%s...", finalBuilder);
+
+        return finalBuilder;
+    }
+
+    public static String hexString(int color1, int color2, int color3){
+        var hexColor1 = Integer.toHexString(color1).toUpperCase();
+        var hexColor1Value = hexColor1.length() < 2 ? String.format("0%s", hexColor1) : hexColor1;
+        var hexColor2 = Integer.toHexString(color2).toUpperCase();
+        var hexColor2Value = hexColor2.length() < 2 ? String.format("0%s", hexColor2) : hexColor2;
+        var hexColor3 = Integer.toHexString(color3).toUpperCase();
+        var hexColor3Value = hexColor3.length() < 2 ? String.format("0%s", hexColor3) : hexColor3;
+        var finalValue = (hexColor1Value + hexColor2Value + hexColor3Value);
+        return finalValue;
+    }
+    public static String domain(String link){
+        var primeraCadena = "https://";
+        var firstDomain = link.substring(primeraCadena.length());
+        var additionalPart = firstDomain.indexOf("/");
+        var lastDomain = additionalPart != -1 ? firstDomain.substring(0,additionalPart) : firstDomain;
+        return lastDomain;
+    }
+}

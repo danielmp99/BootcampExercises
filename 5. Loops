@@ -1,1 +1,55 @@
+public class Loops {
 
+    public static void main(String[] args) {
+        System.out.println(digitSum(sum(555)));
+        System.out.println(numericSerie2(3));
+        System.out.println();
+        System.out.println(countWords("Oh three words"));
+    }
+
+    public static int sum(int number) {
+        var sum = 0;
+        while(number > 0){
+            var digit = number % 10;
+            sum += digit;
+            number /= 10;
+        }
+        return sum;
+    }
+    public static int digitSum(int number){
+
+        while (number > 9){
+            number = sum(number);
+        }
+
+        return number;
+    }
+
+    public static double numericSerie2(int times){
+        var suma = 0.0;
+        for (double numeroVeces = 1; numeroVeces <= times; numeroVeces++){
+            double factor = 1/((2*numeroVeces)-1);
+            suma = suma + factor;
+        }
+        return suma;
+    }
+
+    public static int count(String cadena, String subCadena){
+        var contador = 0;
+        var posicion = 0;
+        for (var i = 0; i < cadena.length(); i = i + subCadena.length()){
+            var nuevaPosicion = cadena.indexOf(subCadena, posicion);
+            if (nuevaPosicion >= 0){
+                posicion = nuevaPosicion + subCadena.length();
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public static int countWords(String phrase){
+        return count(phrase, " ") + 1;
+    }
+
+
+}
